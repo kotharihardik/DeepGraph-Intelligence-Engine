@@ -1,0 +1,889 @@
+{
+  "generated_at": "2026-04-06T15:12:16",
+  "analysis": {
+    "dataset": "hotpot_train_v1.1.json",
+    "embed_model": "BAAI/bge-large-en-v1.5",
+    "kg_model": "en_core_web_trf",
+    "total_questions": 20,
+    "answered": 20,
+    "unanswered": 0,
+    "answer_rate_pct": 100.0,
+    "exact_match": 0.6,
+    "f1": 0.69,
+    "em_by_type": {
+      "bridge": 0.5556,
+      "comparison": 0.6364
+    },
+    "f1_by_type": {
+      "bridge": 0.5926,
+      "comparison": 0.7697
+    },
+    "avg_reasoning_depth": 5.9,
+    "avg_time_per_question_s": 72.888,
+    "total_pipeline_time_s": 1561.84,
+    "kg_avg_nodes": 0.0,
+    "kg_avg_edges": 0.0
+  },
+  "qa": [
+    {
+      "q_num": 1,
+      "_id": "5a792d4e55429907847277d8",
+      "type": "comparison",
+      "level": "hard",
+      "question": "Which documentary came first, 10 Questions for the Dalai Lama or Bougainville – Our Island Our Fight?",
+      "gold_answer": "Bougainville – Our Island Our Fight",
+      "predicted_answer": "Bougainville – Our Island Our Fight",
+      "exact_match": 1.0,
+      "f1": 1.0,
+      "confidence": 0.7602382710456848,
+      "time_s": 184.836,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "Bougainville – Our Island Our Fight Bougainville – Our Island Our Fight is a 1998 Australian documentary film.",
+        "10 Questions for the Dalai Lama 10 Questions For The Dalai Lama is a 2006 documentary film in which filmmaker Rick Ray meets with Tenzin Gyatso, the 14th Dalai Lama at his monastery in Dharamsala, India.",
+        "The Art of Happiness The Art of Happiness (Riverhead, 1998, ISBN ) is a book by the Dalai Lama and Howard Cutler, a psychiatrist who posed questions to the Dalai Lama."
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 7,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.5217,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 30,
+        "drg_edges": 42,
+        "span_nodes": 163,
+        "span_edges": 3229,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 2,
+      "_id": "5ae38abc5542994393b9e6f2",
+      "type": "bridge",
+      "level": "easy",
+      "question": "The Mecca Masjid bombing occurred on which date, inside the Mecca Masjid, (or \"Makkah Masjid\") a mosque located in the old city area of Hyderabad, capital of the Indian state of Telangana state located very close to Charminar, constructed in 1591, is a monument and mosque located in Hyderabad?",
+      "gold_answer": "May 18, 2007",
+      "predicted_answer": "May 18, 2007",
+      "exact_match": 1.0,
+      "f1": 1.0,
+      "confidence": 0.9981647253036499,
+      "time_s": 89.382,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "Mecca Masjid bombing The Mecca Masjid bombing occurred on May 18, 2007 inside the Mecca Masjid, (or \"Makkah Masjid\") a mosque located in the old city area of Hyderabad, capital of the Indian state of Telangana state located very close to Charminar.",
+        "Makkah Masjid, Hyderabad Mecca Masjid (Arabic: مسجد مكة‎ ‎ , Urdu: ‎ , Telugu: మక్కా మసీదు ), also Makkah Masjid, is one of the oldest mosques in Hyderabad, Telangana in India, and it is one of the largest masajids in India.",
+        "Charminar The Charminar (\"Four Minarets\"), constructed in 1591, is a monument and mosque located in Hyderabad, Telangana, India."
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 0,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.15,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 0,
+        "traversal": 0,
+        "expansion": 0,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 46,
+        "drg_edges": 38,
+        "span_nodes": 228,
+        "span_edges": 1918,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 3,
+      "_id": "5a7cab0355429935c91b528c",
+      "type": "comparison",
+      "level": "easy",
+      "question": "What city is popularly nicknamed \"The Windy City\" for its windy climate, Huixian or Hsinchu?",
+      "gold_answer": "Hsinchu",
+      "predicted_answer": "Hsinchu",
+      "exact_match": 1.0,
+      "f1": 1.0,
+      "confidence": 0.9984241227153688,
+      "time_s": 53.375,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "Hsinchu is popularly nicknamed \"The Windy City\" for its windy climate.",
+        "Hsinchu is popularly nicknamed \"The Windy City\" () due to its breezy climate and it is famous for being the City of Technology of Taiwan.",
+        "Huixian Huixian () is a city in Xinxiang, Henan, China."
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 6,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.1818,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 29,
+        "drg_edges": 73,
+        "span_nodes": 127,
+        "span_edges": 1220,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 4,
+      "_id": "5ab3f12555429976abd1bcfd",
+      "type": "comparison",
+      "level": "hard",
+      "question": "Are both Sophie Marceau and Spike Jonze a filmmaker?",
+      "gold_answer": "yes",
+      "predicted_answer": "director, screenwriter, and author.",
+      "exact_match": 0.0,
+      "f1": 0.0,
+      "confidence": 0.395330676202774,
+      "time_s": 133.982,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "Spike Jonze Spike Jonze (pronounced \"Jones\" ; born Adam Spiegel on October 22, 1969) is an American skateboarder, filmmaker, director, producer, photographer, screenwriter, and actor, whose work includes music videos, commercials, film and television.",
+        "Spike Jonze Spike Jonze",
+        "Spike Jonze"
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 6,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.1667,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 39,
+        "drg_edges": 81,
+        "span_nodes": 214,
+        "span_edges": 2586,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 5,
+      "_id": "5abbd9445542993f40c73be7",
+      "type": "comparison",
+      "level": "medium",
+      "question": "Are the Albuquerque International Sunport and the Charleston International Airport both located in the US?",
+      "gold_answer": "yes",
+      "predicted_answer": "yes",
+      "exact_match": 1.0,
+      "f1": 1.0,
+      "confidence": 0.5855327665313652,
+      "time_s": 99.322,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "The field was located on Albuquerque's East Mesa, east of the present site of Albuquerque International Sunport.",
+        "Charleston International Airport Charleston International Airport (IATA: CHS, ICAO: KCHS, FAA LID: CHS) is a joint civil-military airport located in North Charleston, South Carolina.",
+        "The airport is located in North Charleston and is approximately 12 mi northwest of downtown Charleston."
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 6,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 43,
+        "drg_edges": 34,
+        "span_nodes": 181,
+        "span_edges": 1629,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 6,
+      "_id": "5ac53ef75542993e66e82256",
+      "type": "bridge",
+      "level": "hard",
+      "question": "What type of building does Retail Ventures and Value City have in common?",
+      "gold_answer": "store",
+      "predicted_answer": "Retail Ventures Retail Ventures was a holding company originally created in 2003 for DSW (NYSE: DSW), Filene's Basement, and Value City Department Stores.",
+      "exact_match": 0.0,
+      "f1": 0.0,
+      "confidence": 0.34389026095549974,
+      "time_s": 74.404,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "Retail Ventures Retail Ventures was a holding company originally created in 2003 for DSW (NYSE: DSW), Filene's Basement, and Value City Department Stores.",
+        "Retail Ventures Retail Ventures",
+        "Retail Ventures, Inc"
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 8,
+      "internal_eval": {
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 44,
+        "drg_edges": 30,
+        "span_nodes": 147,
+        "span_edges": 1037,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 7,
+      "_id": "5a7a314f5542990783324eb2",
+      "type": "bridge",
+      "level": "easy",
+      "question": "In differential geometry, a Nadirashvili surface is an immersed complete bounded minimal surface in R with negative curvature, Eugenio Calabi and Shing-Tung Yau had a question, about whether there was an immersed complete bounded minimal surface in R, Shing-Tung Yau is from Hong Kong and what type of American mathematician?",
+      "gold_answer": "naturalised",
+      "predicted_answer": "naturalised",
+      "exact_match": 1.0,
+      "f1": 1.0,
+      "confidence": 0.8181491614709857,
+      "time_s": 60.16,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "This simultaneously answered a question of Hadamard about whether there was an immersed complete bounded surface in R with negative curvature, and a question of Eugenio Calabi and Shing-Tung Yau about whether there was an immersed complete bounded minimal surface in R.",
+        "Nadirashvili surface In differential geometry, a Nadirashvili surface is an immersed complete bounded minimal surface in R with negative curvature.",
+        "Shing-Tung Yau Shing-Tung Yau ( ; ; born April 4, 1949) is a Hong Kong and naturalised American mathematician."
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 6,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 30,
+        "drg_edges": 16,
+        "span_nodes": 94,
+        "span_edges": 511,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 8,
+      "_id": "5a85f2ea5542991dd0999ed3",
+      "type": "bridge",
+      "level": "hard",
+      "question": "King Neptune was used to raise money for what escorts for \"Essex\"-class aircraft carriers?",
+      "gold_answer": "\"Iowa\"-class battleships",
+      "predicted_answer": "fast escorts",
+      "exact_match": 0.0,
+      "f1": 0.0,
+      "confidence": 0.7032350424575806,
+      "time_s": 61.068,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "Based on wartime experience, they were to serve as fast escorts for \"Essex\"-class aircraft carrier s.",
+        "King Neptune (pig) King Neptune (May 16, 1942 – May 14, 1950) was a pig used by a United States Navy recruiter to raise $19 million in war bonds (over $250 million in 2012 adjusted for inflation ) for the construction of the \"Iowa\"-class battleship \"Illinois\" between 1942 and 1946.",
+        "King Neptune"
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 6,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.2222,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 41,
+        "drg_edges": 103,
+        "span_nodes": 129,
+        "span_edges": 876,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 9,
+      "_id": "5abc48105542993a06baf8c7",
+      "type": "bridge",
+      "level": "hard",
+      "question": "When was the Southern Railway 107 sold to help with the construction of a hydroelectric dam on the French Broad River in Sevier County, Tennessee?",
+      "gold_answer": "1942",
+      "predicted_answer": "1942",
+      "exact_match": 1.0,
+      "f1": 1.0,
+      "confidence": 0.9474347892161777,
+      "time_s": 58.494,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "Douglas Dam Douglas Dam is a hydroelectric dam on the French Broad River in Sevier County, Tennessee, in the southeastern United States.",
+        "The locomotive continued service on the Southern until it was sold to the Smoky Mountain Railroad in 1942 to help with the construction of the Douglas Dam.",
+        "French Broad River The French Broad River flows 218 mi from near the town of Rosman in Transylvania County, North Carolina, into the state of Tennessee."
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 6,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 49,
+        "drg_edges": 17,
+        "span_nodes": 206,
+        "span_edges": 2050,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 10,
+      "_id": "5a8f09125542995b44241f34",
+      "type": "comparison",
+      "level": "medium",
+      "question": "Are both Charles Band and M. Night Shyamalan known for making films with a comedic flair?",
+      "gold_answer": "no",
+      "predicted_answer": "Night Shyamalan Manoj Nelliyattu \"M.",
+      "exact_match": 0.0,
+      "f1": 0.0,
+      "confidence": 0.3027075888068394,
+      "time_s": 73.231,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "Night Shyamalan Manoj Nelliyattu \"M.",
+        "Night Shyamalan films \"The Happening\" and \"The Last Airbender\".",
+        "Charles Band Charles Robert Band (born December 27, 1951) is an American film producer and director, known for his work on horror comedy movies."
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 7,
+      "internal_eval": {
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 34,
+        "drg_edges": 55,
+        "span_nodes": 152,
+        "span_edges": 1391,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 11,
+      "_id": "5ac1663655429964131be1c4",
+      "type": "bridge",
+      "level": "medium",
+      "question": "What character did the star of the Irish film directed by Paddy Breathnach play in the HBO drama series \"Rome\"?",
+      "gold_answer": "Marcus Agrippa",
+      "predicted_answer": "Marcus Agrippa",
+      "exact_match": 1.0,
+      "f1": 1.0,
+      "confidence": 0.9042730178197225,
+      "time_s": 51.14,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "Leech played Marcus Agrippa on the HBO historical drama series \"Rome\".",
+        "The film was distributed by Redbus Film Distribution and directed by Paddy Breathnach.",
+        "Viva (2015 film) Viva is a 2015 Spanish-language Irish drama film, set in Cuba, directed by Paddy Breathnach and written by Mark O'Halloran."
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 7,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.3333,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 25,
+        "drg_edges": 12,
+        "span_nodes": 126,
+        "span_edges": 1031,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 12,
+      "_id": "5a7ca95155429907fabeeff3",
+      "type": "comparison",
+      "level": "hard",
+      "question": "Which author was born first, James Redfield or James Hanley?",
+      "gold_answer": "James (Joseph) Hanley",
+      "predicted_answer": "James Hanley",
+      "exact_match": 0.0,
+      "f1": 0.8,
+      "confidence": 0.413393526113828,
+      "time_s": 60.316,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "James Redfield James Redfield (born March 19, 1950) is an American author, lecturer, screenwriter and film producer.",
+        "James Hanley (painter) James Hanley (born 1965) is an Irish painter and designer.",
+        "James Redfield James Redfield"
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 6,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.1111,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 39,
+        "drg_edges": 38,
+        "span_nodes": 127,
+        "span_edges": 723,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 13,
+      "_id": "5a820542554299676cceb1e8",
+      "type": "comparison",
+      "level": "medium",
+      "question": "What type of media does Mr Hudson and Makethisrelate have in common?",
+      "gold_answer": "music",
+      "predicted_answer": "music videos.",
+      "exact_match": 0.0,
+      "f1": 0.6666666666666666,
+      "confidence": 0.8763940264922536,
+      "time_s": 55.964,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "Mr Hudson",
+        "Mr Hudson",
+        "Mr Hudson"
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 0,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 0,
+        "traversal": 0,
+        "expansion": 0,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 37,
+        "drg_edges": 92,
+        "span_nodes": 172,
+        "span_edges": 2216,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 14,
+      "_id": "5ab3ce325542992ade7c6ea8",
+      "type": "bridge",
+      "level": "medium",
+      "question": "Kendall Coyne was recognized as the recipient of the NCAA Today's Top 10 Award, which featured this Dallas Cowboys quarterback, born in what year, as one of the ten finalists",
+      "gold_answer": "1993",
+      "predicted_answer": "Dak Prescott",
+      "exact_match": 0.0,
+      "f1": 0.0,
+      "confidence": 0.98707283331977,
+      "time_s": 52.952,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "In January 2017, Coyne was recognized as the recipient of the NCAA Today's Top 10 Award, which featured quarterback Dak Prescott as one of the ten finalists.",
+        "Today's Top 10 Award The Today's Top 10 Award is given each year by the National Collegiate Athletic Association (NCAA) to honor ten outstanding senior student-athletes of the preceding calendar year.",
+        "List of recipients of Today's Top 10 Award This is a list of the recipients of the Today's Top 10 Award given each year by the National Collegiate Athletic Association (NCAA) since its inception in 1973."
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 6,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.1538,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 29,
+        "drg_edges": 14,
+        "span_nodes": 117,
+        "span_edges": 894,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 15,
+      "_id": "5a77961455429967ab105203",
+      "type": "comparison",
+      "level": "easy",
+      "question": "Which band has more founding members, The Wolfhounds or The Why Store?",
+      "gold_answer": "The Wolfhounds",
+      "predicted_answer": "The Wolfhounds",
+      "exact_match": 1.0,
+      "f1": 1.0,
+      "confidence": 0.48685031875029205,
+      "time_s": 58.936,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "The Huff brothers were part of the founding members of the Christian rock band White Heart.",
+        "The Wolfhounds The Wolfhounds are an indie pop/noise pop band formed in Romford, UK in 1985 by Dave Callahan, Paul Clark, Andy Golding, Andy Bolton and Frank Stebbing, and originally active until 1990.",
+        "The band consisted of founding members Dann Huff (lead vocals & guitar) and Alan Pasqua (keyboard), and had Dann's brother David Huff on drums and Mike Brignardello on bass."
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 6,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 52,
+        "drg_edges": 23,
+        "span_nodes": 222,
+        "span_edges": 1457,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 16,
+      "_id": "5ae2399f5542992decbdcc84",
+      "type": "bridge",
+      "level": "medium",
+      "question": "Henry Durant went to this constituent college that has over how many students and fellows?",
+      "gold_answer": "seven hundred",
+      "predicted_answer": "seven hundred",
+      "exact_match": 1.0,
+      "f1": 1.0,
+      "confidence": 0.823455030708313,
+      "time_s": 66.06,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "The college is the third-oldest college of the university and has over seven hundred students and fellows.",
+        "Henry Durant",
+        "It was the first college of the university to admit men and women as both students and Fellows."
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 8,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.25,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 54,
+        "drg_edges": 27,
+        "span_nodes": 190,
+        "span_edges": 1326,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 17,
+      "_id": "5ac1644f5542994ab5c67d0d",
+      "type": "comparison",
+      "level": "medium",
+      "question": "Are Catasetum and Lomandra both genus of plants ?",
+      "gold_answer": "yes",
+      "predicted_answer": "yes",
+      "exact_match": 1.0,
+      "f1": 1.0,
+      "confidence": 0.5870573215770721,
+      "time_s": 55.639,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "Catasetum Catasetum, abbreviated as Ctsm in horticultural trade, is a genus of showy epiphytic Orchids, family Orchidaceae, subfamily Epidendroideae, tribe Cymbidieae, subtribe Catasetinae, with 166 species, many of which are highly prized in horticulture.",
+        "Lomandra Lomandra (also known as mat rushes, ) is a genus of perennial herbs in the family Asparagaceae, subfamily Lomandroideae.",
+        "The subfamily name is derived from the generic name of the type genus, \"Lomandra\"."
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 6,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 7,
+        "drg_edges": 0,
+        "span_nodes": 33,
+        "span_edges": 195,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 18,
+      "_id": "5a73177555429901807daf81",
+      "type": "comparison",
+      "level": "easy",
+      "question": "In what country are Tirich Mir and Rakaposhi  mountains located?",
+      "gold_answer": "Pakistan",
+      "predicted_answer": "Pakistan.",
+      "exact_match": 1.0,
+      "f1": 1.0,
+      "confidence": 0.8828319831021627,
+      "time_s": 52.664,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "Tirich Mir Tirich Mir (Khowar/Urdu: ‎ ) (alternatively Terich Mir, Terichmir and Turch Mir) is the highest mountain of the Hindu Kush range, and the highest mountain in the world outside of the Himalayas-Karakoram range, located in Chitral District of Pakistan.",
+        "Rakaposhi Rakaposhi (Urdu: ‎ ), is a mountain in the Karakoram mountain range in Pakistan.",
+        "Tirich Mir"
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 7,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.0556,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 36,
+        "drg_edges": 4,
+        "span_nodes": 189,
+        "span_edges": 1578,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 19,
+      "_id": "5a8b324855429950cd6afc6c",
+      "type": "comparison",
+      "level": "easy",
+      "question": "What is an IBA Official Cocktail composed of gin, dry Vermouth, orange bitters, maraschino and Absinthe, Staten Island Ferry or Tuxedo ?",
+      "gold_answer": "Tuxedo",
+      "predicted_answer": "The Tuxedo",
+      "exact_match": 1.0,
+      "f1": 1.0,
+      "confidence": 0.9157456880950927,
+      "time_s": 58.234,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "Tuxedo (cocktail) The Tuxedo is an IBA Official Cocktail composed of gin, dry Vermouth, orange bitters, maraschino and Absinthe.",
+        "Casino (cocktail) The Casino is an IBA official cocktail made with gin, maraschino liqueur, orange bitters and fresh lemon juice.",
+        "Derby (cocktail) The Derby is an IBA Official Cocktail composed of gin, peach bitters and mint leaves."
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 7,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.1111,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 31,
+        "drg_edges": 20,
+        "span_nodes": 120,
+        "span_edges": 1389,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    },
+    {
+      "q_num": 20,
+      "_id": "5ac2832655429921a00aafc4",
+      "type": "bridge",
+      "level": "easy",
+      "question": "Which two countries face each other in a cricket match every year?",
+      "gold_answer": "England and Australia",
+      "predicted_answer": "Lisbon and Porto,",
+      "exact_match": 0.0,
+      "f1": 0.3333333333333333,
+      "confidence": 0.5919266687026195,
+      "time_s": 57.595,
+      "evidence_count": 3,
+      "evidence_spans": [
+        "A women's Twenty20 International is a 20 overs-per-side cricket match played in a maximum of 150 minutes between two of the top 10 ranked countries of the International Cricket Council (ICC) in terms of women's cricket.",
+        "List of centuries in women's ODI cricket A One Day International (ODI) is an international cricket match between two teams, each having ODI status, as determined by the International Cricket Council.",
+        "Kendall Cup The Kendall Cup is the trophy awarded to the winners of a 2-day cricket match between representative teams from Lisbon and Porto, in Portugal, played alternately in the two cities."
+      ],
+      "kg_evidence": [],
+      "reasoning_depth": 7,
+      "internal_eval": {
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "recall_at_5": 1.0
+      },
+      "retrieval": {
+        "hybrid": 5,
+        "traversal": 5,
+        "expansion": 5,
+        "kg_guided": 0
+      },
+      "graph_stats": {
+        "drg_nodes": 61,
+        "drg_edges": 46,
+        "span_nodes": 215,
+        "span_edges": 2494,
+        "kg_nodes": 0,
+        "kg_edges": 0,
+        "kg_communities": 0,
+        "kg_density": 0,
+        "kg_entity_labels": {}
+      }
+    }
+  ]
+}

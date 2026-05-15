@@ -1,0 +1,206 @@
+HOTPOTQA ALL LEVELS QA OUTPUT  (with Knowledge Graph)
+Generated : 2026-04-06T15:12:16
+Model     : BAAI/bge-large-en-v1.5
+KG Model  : en_core_web_trf
+
+ANALYSIS SUMMARY
+========================================================================
+  dataset                                 : hotpot_train_v1.1.json
+  embed_model                             : BAAI/bge-large-en-v1.5
+  kg_model                                : en_core_web_trf
+  total_questions                         : 20
+  answered                                : 20
+  unanswered                              : 0
+  answer_rate_pct                         : 100.0
+  exact_match                             : 0.6
+  f1                                      : 0.69
+  em_by_type                              : {'bridge': 0.5556, 'comparison': 0.6364}
+  f1_by_type                              : {'bridge': 0.5926, 'comparison': 0.7697}
+  avg_reasoning_depth                     : 5.9
+  avg_time_per_question_s                 : 72.888
+  total_pipeline_time_s                   : 1561.84
+  kg_avg_nodes                            : 0.0
+  kg_avg_edges                            : 0.0
+
+QA RESULTS
+========================================================================
+
+Q0001  [comparison|hard]  id=5a792d4e55429907847277d8
+  Question   : Which documentary came first, 10 Questions for the Dalai Lama or Bougainville – Our Island Our Fight?
+  Gold       : Bougainville – Our Island Our Fight
+  Predicted  : Bougainville – Our Island Our Fight
+  EM=1  F1=1.0000  Time=184.836s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : Bougainville – Our Island Our Fight Bougainville – Our Island Our Fight is a 1998 Australian documentary film....
+------------------------------------------------------------------------
+
+Q0002  [bridge|easy]  id=5ae38abc5542994393b9e6f2
+  Question   : The Mecca Masjid bombing occurred on which date, inside the Mecca Masjid, (or "Makkah Masjid") a mosque located in the old city area of Hyderabad, capital of the Indian state of Telangana state located very close to Charminar, constructed in 1591, is a monument and mosque located in Hyderabad?
+  Gold       : May 18, 2007
+  Predicted  : May 18, 2007
+  EM=1  F1=1.0000  Time=89.382s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : Mecca Masjid bombing The Mecca Masjid bombing occurred on May 18, 2007 inside the Mecca Masjid, (or "Makkah Masjid") a m...
+------------------------------------------------------------------------
+
+Q0003  [comparison|easy]  id=5a7cab0355429935c91b528c
+  Question   : What city is popularly nicknamed "The Windy City" for its windy climate, Huixian or Hsinchu?
+  Gold       : Hsinchu
+  Predicted  : Hsinchu
+  EM=1  F1=1.0000  Time=53.375s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : Hsinchu is popularly nicknamed "The Windy City" for its windy climate....
+------------------------------------------------------------------------
+
+Q0004  [comparison|hard]  id=5ab3f12555429976abd1bcfd
+  Question   : Are both Sophie Marceau and Spike Jonze a filmmaker?
+  Gold       : yes
+  Predicted  : director, screenwriter, and author.
+  EM=0  F1=0.0000  Time=133.982s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : Spike Jonze Spike Jonze (pronounced "Jones" ; born Adam Spiegel on October 22, 1969) is an American skateboarder, filmma...
+------------------------------------------------------------------------
+
+Q0005  [comparison|medium]  id=5abbd9445542993f40c73be7
+  Question   : Are the Albuquerque International Sunport and the Charleston International Airport both located in the US?
+  Gold       : yes
+  Predicted  : yes
+  EM=1  F1=1.0000  Time=99.322s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : The field was located on Albuquerque's East Mesa, east of the present site of Albuquerque International Sunport....
+------------------------------------------------------------------------
+
+Q0006  [bridge|hard]  id=5ac53ef75542993e66e82256
+  Question   : What type of building does Retail Ventures and Value City have in common?
+  Gold       : store
+  Predicted  : Retail Ventures Retail Ventures was a holding company originally created in 2003 for DSW (NYSE: DSW), Filene's Basement, and Value City Department Stores.
+  EM=0  F1=0.0000  Time=74.404s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : Retail Ventures Retail Ventures was a holding company originally created in 2003 for DSW (NYSE: DSW), Filene's Basement,...
+------------------------------------------------------------------------
+
+Q0007  [bridge|easy]  id=5a7a314f5542990783324eb2
+  Question   : In differential geometry, a Nadirashvili surface is an immersed complete bounded minimal surface in R with negative curvature, Eugenio Calabi and Shing-Tung Yau had a question, about whether there was an immersed complete bounded minimal surface in R, Shing-Tung Yau is from Hong Kong and what type of American mathematician?
+  Gold       : naturalised
+  Predicted  : naturalised
+  EM=1  F1=1.0000  Time=60.16s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : This simultaneously answered a question of Hadamard about whether there was an immersed complete bounded surface in R wi...
+------------------------------------------------------------------------
+
+Q0008  [bridge|hard]  id=5a85f2ea5542991dd0999ed3
+  Question   : King Neptune was used to raise money for what escorts for "Essex"-class aircraft carriers?
+  Gold       : "Iowa"-class battleships
+  Predicted  : fast escorts
+  EM=0  F1=0.0000  Time=61.068s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : Based on wartime experience, they were to serve as fast escorts for "Essex"-class aircraft carrier s....
+------------------------------------------------------------------------
+
+Q0009  [bridge|hard]  id=5abc48105542993a06baf8c7
+  Question   : When was the Southern Railway 107 sold to help with the construction of a hydroelectric dam on the French Broad River in Sevier County, Tennessee?
+  Gold       : 1942
+  Predicted  : 1942
+  EM=1  F1=1.0000  Time=58.494s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : Douglas Dam Douglas Dam is a hydroelectric dam on the French Broad River in Sevier County, Tennessee, in the southeaster...
+------------------------------------------------------------------------
+
+Q0010  [comparison|medium]  id=5a8f09125542995b44241f34
+  Question   : Are both Charles Band and M. Night Shyamalan known for making films with a comedic flair?
+  Gold       : no
+  Predicted  : Night Shyamalan Manoj Nelliyattu "M.
+  EM=0  F1=0.0000  Time=73.231s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : Night Shyamalan Manoj Nelliyattu "M....
+------------------------------------------------------------------------
+
+Q0011  [bridge|medium]  id=5ac1663655429964131be1c4
+  Question   : What character did the star of the Irish film directed by Paddy Breathnach play in the HBO drama series "Rome"?
+  Gold       : Marcus Agrippa
+  Predicted  : Marcus Agrippa
+  EM=1  F1=1.0000  Time=51.14s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : Leech played Marcus Agrippa on the HBO historical drama series "Rome"....
+------------------------------------------------------------------------
+
+Q0012  [comparison|hard]  id=5a7ca95155429907fabeeff3
+  Question   : Which author was born first, James Redfield or James Hanley?
+  Gold       : James (Joseph) Hanley
+  Predicted  : James Hanley
+  EM=0  F1=0.8000  Time=60.316s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : James Redfield James Redfield (born March 19, 1950) is an American author, lecturer, screenwriter and film producer....
+------------------------------------------------------------------------
+
+Q0013  [comparison|medium]  id=5a820542554299676cceb1e8
+  Question   : What type of media does Mr Hudson and Makethisrelate have in common?
+  Gold       : music
+  Predicted  : music videos.
+  EM=0  F1=0.6667  Time=55.964s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : Mr Hudson...
+------------------------------------------------------------------------
+
+Q0014  [bridge|medium]  id=5ab3ce325542992ade7c6ea8
+  Question   : Kendall Coyne was recognized as the recipient of the NCAA Today's Top 10 Award, which featured this Dallas Cowboys quarterback, born in what year, as one of the ten finalists
+  Gold       : 1993
+  Predicted  : Dak Prescott
+  EM=0  F1=0.0000  Time=52.952s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : In January 2017, Coyne was recognized as the recipient of the NCAA Today's Top 10 Award, which featured quarterback Dak...
+------------------------------------------------------------------------
+
+Q0015  [comparison|easy]  id=5a77961455429967ab105203
+  Question   : Which band has more founding members, The Wolfhounds or The Why Store?
+  Gold       : The Wolfhounds
+  Predicted  : The Wolfhounds
+  EM=1  F1=1.0000  Time=58.936s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : The Huff brothers were part of the founding members of the Christian rock band White Heart....
+------------------------------------------------------------------------
+
+Q0016  [bridge|medium]  id=5ae2399f5542992decbdcc84
+  Question   : Henry Durant went to this constituent college that has over how many students and fellows?
+  Gold       : seven hundred
+  Predicted  : seven hundred
+  EM=1  F1=1.0000  Time=66.06s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : The college is the third-oldest college of the university and has over seven hundred students and fellows....
+------------------------------------------------------------------------
+
+Q0017  [comparison|medium]  id=5ac1644f5542994ab5c67d0d
+  Question   : Are Catasetum and Lomandra both genus of plants ?
+  Gold       : yes
+  Predicted  : yes
+  EM=1  F1=1.0000  Time=55.639s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : Catasetum Catasetum, abbreviated as Ctsm in horticultural trade, is a genus of showy epiphytic Orchids, family Orchidace...
+------------------------------------------------------------------------
+
+Q0018  [comparison|easy]  id=5a73177555429901807daf81
+  Question   : In what country are Tirich Mir and Rakaposhi  mountains located?
+  Gold       : Pakistan
+  Predicted  : Pakistan.
+  EM=1  F1=1.0000  Time=52.664s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : Tirich Mir Tirich Mir (Khowar/Urdu: ‎ ) (alternatively Terich Mir, Terichmir and Turch Mir) is the highest mountain of t...
+------------------------------------------------------------------------
+
+Q0019  [comparison|easy]  id=5a8b324855429950cd6afc6c
+  Question   : What is an IBA Official Cocktail composed of gin, dry Vermouth, orange bitters, maraschino and Absinthe, Staten Island Ferry or Tuxedo ?
+  Gold       : Tuxedo
+  Predicted  : The Tuxedo
+  EM=1  F1=1.0000  Time=58.234s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : Tuxedo (cocktail) The Tuxedo is an IBA Official Cocktail composed of gin, dry Vermouth, orange bitters, maraschino and A...
+------------------------------------------------------------------------
+
+Q0020  [bridge|easy]  id=5ac2832655429921a00aafc4
+  Question   : Which two countries face each other in a cricket match every year?
+  Gold       : England and Australia
+  Predicted  : Lisbon and Porto,
+  EM=0  F1=0.3333  Time=57.595s
+  KG         : 0 nodes  0 edges  0 communities
+  Top span   : A women's Twenty20 International is a 20 overs-per-side cricket match played in a maximum of 150 minutes between two of...
+------------------------------------------------------------------------
