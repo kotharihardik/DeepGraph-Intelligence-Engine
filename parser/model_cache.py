@@ -1,72 +1,96 @@
+"""Process-wide model cache.
+
+The original pipeline re-instantiated spaCy-trf, BART-MNLI, Flan-T5 and a
+cross-encoder for *every question*, which is where most of its ~55 s/question
+went. Every model here is loaded once per process and shared.
 """
-Model cache utilities to avoid re-loading large transformers multiple times.
-"""
+from __future__ import annotations
 
-try:
-    import torch
-    _TORCH_AVAILABLE = True
-except Exception:
-    _TORCH_AVAILABLE = False
-    print("WARNING: torch not available. CUDA acceleration and some models will be disabled.")
+import os
+import threading
+from typing import Any, Dict
 
-from typing import Dict, Any
+# Cap the Apple-MPS allocator: unbounded it caches GBs of activations and, on an
+# 8 GB machine shared with a local LLM, pushes the system into swap.
+os.environ.setdefault("PYTORCH_MPS_HIGH_WATERMARK_RATIO", "0.5")
+os.environ.setdefault("PYTORCH_MPS_LOW_WATERMARK_RATIO", "0.3")
+os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 
-try:
+from . import config
+
+_CACHE: Dict[str, Any] = {}
+_LOCK = threading.Lock()
+
+
+def get_device() -> str:
+    if config.DEVICE != "auto":
+        return config.DEVICE
+    try:
+        import torch
+        if torch.cuda.is_available():
+            return "cuda"
+        if torch.backends.mps.is_available():
+            return "mps"
+    except Exception:
+        pass
+    return "cpu"
+
+
+def _cached(key: str, factory):
+    with _LOCK:
+        if key not in _CACHE:
+            _CACHE[key] = factory()
+        return _CACHE[key]
+
+
+def _half_on_accelerator(module):
+    # fp16 on GPU/MPS halves memory and roughly doubles throughput; scores move
+    # by ~1e-3, which does not change rankings in practice.
+    if get_device() in ("mps", "cuda"):
+        module.half()
+    return module
+
+
+def get_embedder(model_name: str = None):
     from sentence_transformers import SentenceTransformer
-    _SENTENCE_TRANSFORMERS_AVAILABLE = True
-except Exception:
-    _SENTENCE_TRANSFORMERS_AVAILABLE = False
-    print("WARNING: sentence_transformers not available. Semantic features will be disabled.")
-
-_MODEL_CACHE: Dict[str, Any] = {}
-_QA_PIPELINE_CACHE: Dict[str, Any] = {}
-_NER_PIPELINE_CACHE: Dict[str, Any] = {}
+    name = model_name or config.EMBED_MODEL
+    return _cached(f"emb::{name}",
+                   lambda: _half_on_accelerator(SentenceTransformer(name, device=get_device())))
 
 
-def get_sentence_transformer(model_name: str):
-    if model_name in _MODEL_CACHE:
-        return _MODEL_CACHE[model_name]
+def get_cross_encoder(model_name: str = None, max_length: int = 512):
+    from sentence_transformers import CrossEncoder
+    name = model_name or config.RERANK_MODEL
 
-    if not _SENTENCE_TRANSFORMERS_AVAILABLE:
-        return None
+    def _load():
+        ce = CrossEncoder(name, max_length=max_length, device=get_device())
+        _half_on_accelerator(ce.model)
+        ce.model.to(get_device())
+        return ce
 
-    try:
-        model = SentenceTransformer(model_name, device="cpu")
-        _MODEL_CACHE[model_name] = model
-        return model
-    except Exception as e:
-        print(f"Error loading SentenceTransformer: {e}")
-        return None
+    return _cached(f"ce::{name}", _load)
 
 
-def get_ner_pipeline(model_name: str = "dslim/bert-base-NER"):
-    if model_name in _NER_PIPELINE_CACHE:
-        return _NER_PIPELINE_CACHE[model_name]
+def get_spacy(model_name: str = None):
+    import spacy
+    name = model_name or config.SPACY_MODEL
 
-    try:
-        from transformers import pipeline
-        device = 0 if (_TORCH_AVAILABLE and torch.cuda.is_available()) else -1
-        print(f"Loading NER pipeline: {model_name}...")
-        ner = pipeline("ner", model=model_name, aggregation_strategy="simple", device=device)
-        _NER_PIPELINE_CACHE[model_name] = ner
-        return ner
-    except Exception as e:
-        print(f"Error loading NER pipeline: {e}")
-        return None
+    def _load():
+        try:
+            return spacy.load(name)
+        except OSError:
+            # Fall back to the small model rather than failing the whole run.
+            return spacy.load("en_core_web_sm")
+
+    return _cached(f"spacy::{name}", _load)
 
 
-def get_qa_pipeline(model_name: str = "deepset/deberta-v3-large-squad2"):
-    if model_name in _QA_PIPELINE_CACHE:
-        return _QA_PIPELINE_CACHE[model_name]
-
-    try:
-        from transformers import pipeline
-        device = 0 if (_TORCH_AVAILABLE and torch.cuda.is_available()) else -1
-        print(f"Loading extractive-QA model: {model_name} (device={device})...")
-        qa = pipeline("question-answering", model=model_name, device=device)
-        _QA_PIPELINE_CACHE[model_name] = qa
-        print("Extractive-QA model ready.")
-        return qa
-    except Exception as e:
-        print(f"Error loading QA pipeline: {e}")
-        return None
+def get_extractive_qa(model_name: str = None):
+    from transformers import pipeline
+    name = model_name or config.EXTRACTIVE_QA_MODEL
+    device = get_device()
+    return _cached(
+        f"qa::{name}",
+        lambda: pipeline("question-answering", model=name,
+                         device=0 if device == "cuda" else (device if device == "mps" else -1)),
+    )
